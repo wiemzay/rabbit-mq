@@ -19,7 +19,7 @@ public class TaskController {
         this.taskRepository = taskRepository;
         this.restTemplate = restTemplate;
     }
-    private final String app2Url = "http://localhost:8082"; // Change this to the actual URL of App2
+    private final String app2Url = "http://localhost:8082";
 
     @PostMapping
     public String createTask(@RequestBody Task task) {
