@@ -1,0 +1,3 @@
+ALTER TABLE task
+    ADD COLUMN result VARCHAR(255);
+

@@ -1,9 +1,18 @@
 server:
   port: 8082
 spring:
+  redis:
+    host: localhost
+    port: 6379
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
+
+
+rabbitmq:
+  queue: task-queue
+  exchange: task-exchange
+  routingKey: task-routing-key
 

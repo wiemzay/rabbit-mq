@@ -1,6 +1,5 @@
-package com.microservice.one.service;
+package com.microservice.two;
 
-import com.microservice.one.domain.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -25,7 +24,6 @@ public class TaskService {
 
     public void sendTaskToRabbitMQ(Task task) {
 
-        logger.info(task.getDescription());
         rabbitTemplate.convertAndSend(exchange, routingKey, task);
     }
 }

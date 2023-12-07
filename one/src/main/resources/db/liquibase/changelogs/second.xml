@@ -4,9 +4,11 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
-
-    <include relativeToChangelogFile="true" file="changelogs/first.xml" />
-    <include relativeToChangelogFile="true" file="changelogs/second.xml" />
-
+    <changeSet id="first_changelog" author="wiem.zayeti">
+        <sqlFile relativeToChangelogFile="true" path="../sql/second.sql"/>
+        <rollback>
+            <sqlFile relativeToChangelogFile="true" path="../sql/second.rollback.sql"/>
+        </rollback>
+    </changeSet>
 
 </databaseChangeLog>

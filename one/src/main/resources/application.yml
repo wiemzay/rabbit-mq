@@ -1,28 +1,31 @@
 server:
-  port: 5050
+  port: 8083
 spring:
+  datasource:
+    url: jdbc:h2:file:/home/hydatis/Desktop/mini-project-test/one/src/main/resources/db/liquibase/files;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: password
-  h2:
-    console:
-      enabled: true
-  jpa:
-    hibernate:
-      ddl-auto: create
-    database-platform: org.hibernate.dialect.H2Dialect
+
   liquibase:
     change-log: classpath:/db/liquibase/changelog-master.xml
     test-rollback-on-update: true
 
 rabbitmq:
+  queue: task-queue
   exchange: task-exchange
   routingKey: task-routing-key
 
