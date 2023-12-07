@@ -1,12 +1,18 @@
 package com.microservice.one.domain;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
+@Setter
+@Getter
 @Entity
 public class Task {
 
@@ -15,20 +21,8 @@ public class Task {
     private Long id;
     private String description;
 
-    public Long getId() {
-        return id;
-    }
+    public Task() {
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Task(Long id, String description) {

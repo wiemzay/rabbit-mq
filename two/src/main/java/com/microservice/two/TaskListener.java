@@ -13,10 +13,8 @@ public class TaskListener {
 
     @RabbitListener(queues = "taskQueue")
     public void receiveTask(String taskDescription) {
-        // Perform calculation
         String result = calculationService.performFakeCalculation();
 
-        // Simulate sending the result back to the first application
-        System.out.println("Fake Calculation Result: " + result);
+        System.out.println("Fake Calculation Result for task " + taskDescription + " = " + result);
     }
 }

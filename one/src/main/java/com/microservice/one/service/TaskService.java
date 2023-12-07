@@ -1,12 +1,15 @@
 package com.microservice.one.service;
 
 import com.microservice.one.domain.Task;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TaskService {
+    private static final Logger logger = LoggerFactory.getLogger(TaskService.class);
 
     private final RabbitTemplate rabbitTemplate;
 
@@ -21,7 +24,8 @@ public class TaskService {
     }
 
     public void sendTaskToRabbitMQ(Task task) {
-        // Logic to send the task to RabbitMQ queue
+
+        logger.info(task.getDescription());
         rabbitTemplate.convertAndSend(exchange, routingKey, task);
     }
 }
