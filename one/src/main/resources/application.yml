@@ -1,0 +1,24 @@
+server:
+  port: 5050
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  liquibase:
+    change-log: classpath:/db/liquibase/changelog-master.xml
+    test-rollback-on-update: true
+  h2:
+    console:
+      enabled: true
+rabbitmq:
+  exchange: task-exchange
+  routingKey: task-routing-key
+
