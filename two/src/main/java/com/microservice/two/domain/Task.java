@@ -1,4 +1,4 @@
-package com.microservice.two;
+package com.microservice.two.domain;
 
 
 

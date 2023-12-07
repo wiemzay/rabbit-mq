@@ -1,4 +1,4 @@
-package com.microservice.one;
+package com.microservice.one.repository;
 
 import com.microservice.one.domain.Task;
 import org.springframework.data.jpa.repository.JpaRepository;

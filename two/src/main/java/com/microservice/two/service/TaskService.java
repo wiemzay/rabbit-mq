@@ -1,5 +1,6 @@
-package com.microservice.two;
+package com.microservice.two.service;
 
+import com.microservice.two.domain.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

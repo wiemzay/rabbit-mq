@@ -1,5 +1,6 @@
-package com.microservice.two;
+package com.microservice.two.service;
 
+import com.microservice.two.domain.Task;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
