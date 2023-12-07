@@ -14,10 +14,9 @@ public class CalculationController {
 
     @PostMapping("/receiveTask")
     public String receiveTask(@RequestBody Task task) {
-        // Process the received task
+
         System.out.println("Received Task: " + task);
         calculationService.performFakeCalculation(task);
-        // Add your task processing logic here
 
         return "Task received and processed";
     }
