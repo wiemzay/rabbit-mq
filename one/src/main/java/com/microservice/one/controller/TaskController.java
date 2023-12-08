@@ -17,20 +17,28 @@ public class TaskController {
     private final RestTemplate restTemplate;
     private final TaskRepository taskRepository;
 
+    /**
+     * Constructor for TaskController.
+     *
+     * @param restTemplate   RestTemplate for making HTTP requests.
+     * @param taskRepository TaskRepository for handling Task entities.
+     */
     public TaskController(RestTemplate restTemplate, TaskRepository taskRepository) {
         this.restTemplate = restTemplate;
         this.taskRepository = taskRepository;
     }
 
+    /**
+     * Endpoint for creating a new task.
+     *
+     * @param task The Task object to be created.
+     * @return A success message indicating that the task was sent successfully.
+     */
     @PostMapping
     public String createTask(@RequestBody Task task) {
-
         taskRepository.save(task);
         restTemplate.postForObject(app2Url + "/receiveTask", task, String.class);
         return "Task sent successfully";
-
-
     }
-
 }
 
