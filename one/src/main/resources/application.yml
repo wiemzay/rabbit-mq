@@ -29,3 +29,6 @@ rabbitmq:
   exchange: task-exchange
   routingKey: task-routing-key
 
+
+api:
+  url-app2: http://localhost:8082
