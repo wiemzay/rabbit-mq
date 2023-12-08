@@ -2,7 +2,9 @@ package com.microservice.two.domain;
 
 
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -10,28 +12,13 @@ import lombok.Setter;
  */
 @Setter
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class TaskDto {
 
     private Long id;
     private String description;
     private long result;
 
-    /**
-     * Constructs an empty TaskDto.
-     */
-    public TaskDto() {
-
-    }
-
-    /**
-     * Constructs a TaskDto with the specified ID and description.
-     *
-     * @param id          The unique identifier of the task.
-     * @param description The description of the task.
-     */
-    public TaskDto(Long id, String description) {
-        this.id = id;
-        this.description = description;
-    }
 }
 

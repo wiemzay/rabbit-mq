@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TaskService {
-    private static final Logger logger = LoggerFactory.getLogger(TaskService.class);
+
 
     private final RabbitTemplate rabbitTemplate;
 
